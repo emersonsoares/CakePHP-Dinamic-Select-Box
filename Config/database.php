@@ -3,7 +3,7 @@
 class DATABASE_CONFIG {
 
     public $default = array(
-        'datasource' => 'Database/Mysql',
+        'datasource' => 'Database/Postgres',
         'persistent' => false,
         'host' => '',
         'login' => '',
