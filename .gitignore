@@ -1,2 +1,4 @@
 nbproject
 tmp
+Config/database.php
+Config/email.php
