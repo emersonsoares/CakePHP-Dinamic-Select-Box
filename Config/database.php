@@ -9,7 +9,7 @@ class DATABASE_CONFIG {
         'login' => 'avhgnnansr',
         'password' => 'CfCtsfgtCSHqAf90m-X-',
         'database' => 'avhgnnansr',
-        'prefix' => ''
+        'prefix' => 'sb_'
     );
 
 }
