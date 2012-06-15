@@ -9,7 +9,7 @@
     <?php echo $this->Form->end(); ?>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <h3><?php echo __('Links'); ?></h3>
     <ul>
         <li><?php echo $this->Html->link(__('código fonte'), 'http://github.com/emersonsoares/dinamicselect'); ?></li>
         <li><?php echo $this->Html->link(__('emersonsoares.com'), 'http://emersonsoares.com'); ?></li>
