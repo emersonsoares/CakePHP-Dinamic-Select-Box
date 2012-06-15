@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This is core configuration file.
  *
@@ -23,15 +24,16 @@
  *
  * @package       cake.config
  */
+
 /**
  * Database configuration class.
  * You can specify multiple configurations for production, development and testing.
  *
  * datasource => The name of a supported datasource; valid options are as follows:
- *		Database/Mysql 		- MySQL 4 & 5,
- *		Database/Sqlite		- SQLite (PHP5 only),
- *		Database/Postgres	- PostgreSQL 7 and higher,
- *		Database/Sqlserver	- Microsoft SQL Server 2005 and higher
+ * 		Database/Mysql 		- MySQL 4 & 5,
+ * 		Database/Sqlite		- SQLite (PHP5 only),
+ * 		Database/Postgres	- PostgreSQL 7 and higher,
+ * 		Database/Sqlserver	- Microsoft SQL Server 2005 and higher
  *
  * You can add custom database datasources (or override existing datasources) by adding the
  * appropriate file to app/Model/Datasource/Database.  Datasources should be named 'MyDatasource.php',
@@ -60,25 +62,31 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
-		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
+    var $default = null;
+    public $development = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => 'localhost',
+        'login' => 'root',
+        'password' => '1234',
+        'database' => 'cake_labs',
+        'prefix' => 'sb_'
+    );
+    public $production = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => '',
+        'login' => '',
+        'password' => '',
+        'database' => '',
+        'prefix' => 'sb_'
+    );
 
-	public $test = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_database_name',
-		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
+    function __construct() {
+        if (Configure::read('Environment.name') == 'production')
+            $this->default = $this->production;
+        else if (Configure::read('Environment.name') == 'development')
+            $this->default = $this->development;
+    }
+
 }
