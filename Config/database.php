@@ -3,12 +3,12 @@
 class DATABASE_CONFIG {
     
     public $default = array(
-        'datasource' => 'Database/MySql',
+        'datasource' => 'Database/Mysql',
         'persistent' => false,
-        'host' => 'ec2-107-22-235-143.compute-1.amazonaws.com',
-        'login' => 'avhgnnansr',
-        'password' => 'CfCtsfgtCSHqAf90m-X-',
-        'database' => 'avhgnnansr',
+        'host' => 'cakelabs.db.7856587.hostedresource.com',
+        'login' => 'cakelabs',
+        'password' => 'cakASDF159',
+        'database' => 'cakelabs',
         'prefix' => 'sb_'
     );
 
