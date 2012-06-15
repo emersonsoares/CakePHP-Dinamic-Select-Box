@@ -43,7 +43,6 @@
             <div id="content">
 
                 <?php echo $this->Session->flash(); ?>
-                <?php echo Configure::read('Environment.name'); ?>
                 <?php echo $this->fetch('content'); ?>
             </div>
             <div id="footer">
