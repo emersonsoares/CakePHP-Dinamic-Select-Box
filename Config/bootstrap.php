@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is loaded automatically by the app/webroot/index.php file after core.php
  *
@@ -22,7 +23,6 @@
  * @since         CakePHP(tm) v 0.10.8.2117
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'Apc'));
 
@@ -51,7 +51,6 @@ Cache::config('default', array('engine' => 'Apc'));
  * ));
  *
  */
-
 /**
  * Custom Inflector rules, can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
@@ -60,7 +59,6 @@ Cache::config('default', array('engine' => 'Apc'));
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  *
  */
-
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. make sure you read the documentation on CakePlugin to use more
@@ -70,3 +68,20 @@ Cache::config('default', array('engine' => 'Apc'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+if (isset($_SERVER['SERVER_NAME'])) {
+    switch ($_SERVER['SERVER_NAME']) {
+        case 'localhost':
+            Configure::write('Environment.name', 'development');
+            Configure::write('debug', 2);
+            break;
+        default:
+            Configure::write('Environment.name', 'production');
+            Configure::write ('debug', 0);
+            break;
+    }
+} else
+{
+    Configure::write('Environment.name', 'production');
+    Configure::write ('debug', 0);
+}
+    
