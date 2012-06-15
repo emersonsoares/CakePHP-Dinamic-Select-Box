@@ -15,6 +15,7 @@ class HomeController extends AppController {
     function index() {
         $this->set('title_for_layout', 'Exemplo de select box dinamico com cidades e estados do Brasil');
         $this->set('estados', $this->Estado->find('list'));
+        $this->set('conexao', $this->pg_connection_string_from_database_url());
     }
 
     public function listar_cidades_json() {
@@ -25,6 +26,11 @@ class HomeController extends AppController {
                         'recursive' => -1)
                     ));
         }
+    }
+
+    function pg_connection_string_from_database_url() {
+        extract(parse_url($_ENV["DATABASE_URL"]));
+        return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
     }
 
 }

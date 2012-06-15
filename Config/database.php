@@ -1,7 +1,7 @@
 <?php
 
 class DATABASE_CONFIG {
-
+    
     public $default = array(
         'datasource' => 'Database/Postgres',
         'persistent' => false,
@@ -9,7 +9,7 @@ class DATABASE_CONFIG {
         'login' => '',
         'password' => '',
         'database' => '',
-        'prefix' => '',
+        'prefix' => ''
     );
 
 }
