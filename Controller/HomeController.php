@@ -13,6 +13,7 @@ class HomeController extends AppController {
     }
 
     function index() {
+        $this->set('title_for_layout', 'Exemplo de select box dinamico com cidades e estados do Brasil');
         $this->set('estados', $this->Estado->find('list'));
     }
 
