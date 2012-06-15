@@ -7,7 +7,6 @@
         <?php echo $this->Form->input('cidade_id', array('type' => 'select', 'id' => 'cidades', 'empty' => 'selecione uma cidade')) ?>
     </fieldset>
     <?php echo $this->Form->end(); ?>
-    <?php echo $conexao; ?>
 </div>
 <div class="actions">
     <h3><?php echo __('Links'); ?></h3>
