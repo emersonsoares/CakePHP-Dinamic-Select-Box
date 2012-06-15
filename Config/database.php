@@ -8,6 +8,6 @@ class DATABASE_CONFIG {
 		'login' => 'root',
 		'password' => '1234',
 		'database' => 'cake_labs',
-		'prefix' => 'sb',
+		'prefix' => 'sb_',
 	);
 }
